@@ -1,0 +1,40 @@
+<%- include('partials/header-formatted'); -%>
+
+<div class="container myPad">
+
+  <h1 style="margin-top: 3rem">Add new suspect</h1>
+
+  <form class="" action="/initialize" method="post">
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Suspect ID</label>
+      <input name="suspectID" type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name</label>
+      <input name="suspectName" type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Height</label>
+      <input name="suspectHeight" type="number" step="any" class="form-control" id="exampleFormControlInput1">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Age</label>
+      <input name="suspectAge" type="number" class="form-control" id="exampleFormControlInput1">
+    </div>
+
+    <div class="form-group">
+      <label for="Post">Description</label>
+      <textarea name="suspectDescription" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+
+  </form>
+
+</div>
+
+<%- include('partials/footer'); -%>
