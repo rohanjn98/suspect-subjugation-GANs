@@ -45,7 +45,8 @@
             document.getElementById('map'), {
                 zoom: 16,
                 center: new google.maps.LatLng(array[array.length - 2], array[array.length - 1])
-            });
+            }
+        );
 
         for (var i = 0; i < array.length; i += 2) {
             //alert(array[i])
@@ -54,7 +55,6 @@
                 map: map
             });
         }
-
     }
 </script>
 
