@@ -14,10 +14,10 @@ The project has two parts:
 
 ## Work Flow
 <p align="center">
-  <img src="flow1.png">
+  <img src="Images/flow1.png">
 </p>
 <p align="center">
-  <img src="flow2.png">
+  <img src="Images/flow2.png">
 </p>
 
 1. We developed our own stable GAN for this purpose and found a midway solution for trade-off between 
