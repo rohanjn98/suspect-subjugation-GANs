@@ -1,0 +1,64 @@
+<%- include('partials/header-formatted', {GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY}); -%>
+
+<div id="map">
+</div>
+
+<% const suspectLocations = locations%>
+
+<% const locationList = [] %>
+
+<%function insertThis(value) {%>
+<%for (var key in value) {%>
+<%if (value.hasOwnProperty(key)) {%>
+<%var val = value[key];%>
+<% locationList.push(val)%>
+<%insertThis(val);%>
+<%}%>
+      <%}%>
+<%}%>
+
+  <%function walk(suspectLocations) {%>
+<%for (var key in suspectLocations) {%>
+<%if (suspectLocations.hasOwnProperty(key)) {%>
+<%var val = suspectLocations[key];%>
+<%insertThis(val);%>
+<%}%>
+      <%}%>
+<%}%>
+  <%walk(suspectLocations)%>
+<div id="mydiv" data-test=<%= locationList %>></div>
+
+
+<script>
+    function initMap() {
+
+        var mylocations = document.getElementById('mydiv').dataset.test;
+        var array = JSON.parse("[" + mylocations + "]");
+        //alert(array.length)
+        var marker;
+        var nagpur = {
+            lat: 21,
+            lng: 79
+        }
+
+        var map = new google.maps.Map(
+            document.getElementById('map'), {
+                zoom: 16,
+                center: new google.maps.LatLng(array[array.length - 2], array[array.length - 1])
+            });
+
+        for (var i = 0; i < array.length; i += 2) {
+            //alert(array[i])
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(array[i], array[i + 1]),
+                map: map
+            });
+        }
+
+    }
+</script>
+
+<script async defer src=GOOGLE_MAPS_API_KEY>
+</script>
+
+<%- include('partials/mapfooter'); -%>
