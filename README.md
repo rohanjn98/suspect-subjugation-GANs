@@ -10,7 +10,7 @@ widely applied in the domain of criminal suspect subjugation.
  
 The project has two parts:
 1. Developing GAN model.
-2. Developing Web and Mobile App and deploying the GAN model on Web App.
+2. Developing Web and Mobile App and deploying the GAN model on them.
 
 ## Work Flow
 <p align="center">
